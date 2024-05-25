@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/712575d4a5.js" crossorigin="anonymous"></script> <!-- Icono buscador -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> <!-- Traductor -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regístrate ArduGame</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Archivo css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+15:wght@400;700&display=swap"> <!-- Tipografía jersey -->
+    <link rel="icon" href="img/icono-logo.png"> <!-- Logo de la pestaña -->
+    <script src="script.js"></script> <!-- Archivo js -->
+</head>
+<body>
+    <div id="google_translate_element"></div> <!-- Declaramos el traductor -->
+
+    <!-- Cabecera con el margen superior -->
+    <header>
+        <div class="navBar">
+            <div class="container">
+                <div class="logo"> <!-- Logo -->
+                    <a href="Principal.html"><img src="img/icono-logo.png" alt="Logo Web" id="logo-web"></a>
+                </div>
+
+                <nav> <!-- Menú -->
+                    <ul id="lista-menu">
+                      <li><a href="Principal.html" class="bordes-separacion">INICIO</a></li>
+                      <li><a href="Informacion.html" class="bordes-separacion">INFORMACIÓN</a></li>
+                      <li><a href="Proyectos-Arduino.html" class="bordes-separacion">PROYECTOS ARDUINO</a></li>
+                      <li><a href="Videojuegos.html" class="bordes-separacion">VIDEOJUEGOS</a></li>
+                    </ul>
+                </nav>
+
+                <div id="Buscador"> <!-- Buscador -->
+                    <input type="text" id="searchInput" placeholder="Buscar" required>
+                    <ul id="searchResults"></ul>
+                    <div id="logo-buscar">
+                        <i class="fas fa-search icon"></i>
+                    </div>
+                </div>
+
+                <ul id="lista-iconos"> <!-- Iconos de usuario e idioma -->
+                    <li><a href="Sesion.html"><img src="img/usuario.png" alt="usuario" class="icono activo-icono"></a></li>
+                    <li><a href="#" id="idiomas-traduccion"><img src="img/idiomas.png" alt="idiomas" class="icono"></a>
+                        <select name="select" id="idiomas" style="display: none;"> <!-- Selector con las opciones de idioma -->
+                            <optgroup label="Idiomas">
+                                <option value="es">Español</option>
+                                <option value="en">Inglés</option>
+                                <option value="fr">Francés</option>
+                                <option value="de">Alemán</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cuerpo de la página -->
+    <main id="fondo-iconos"> <!-- Imagen de los laterales -->
+        <div class="container-iconos"> <!-- Contenedor del cuerpo de la página -->
+            <h1>Regístrate</h1> <!-- Título de la página -->
+
+            <!-- Formulario con los campos a rellenar para registrarse -->
+            <section id="cuadro-seccion" class="distancia">
+                <p class="texto3">Por favor, rellene el siguiente formulario para hacerse usuario de ArduGame y subir sus proyectos. Si ya tiene una cuenta, pulse iniciar sesión.</p>
+                <div class="disposicionformulario">
+                    <!-- Columna de datos de la izquierda -->
+                    <div class="contenido-formulario">
+                        <div class="formularioregistro distancia5">
+                            <label>Nombre: </label>
+                            <input type="text" name="nombre" id="nombre" placeholder="Introduzca nombre" required> <!-- Usamos placeholder para indicar la forma o los datos que tenemos que introducir -->
+                        </div>
+                        <div class="formularioregistro distancia5">
+                            <label>Apellidos: </label>
+                            <input type="text" name="apellidos" id="apellidos" placeholder="Introduzca apellidos" required> <!-- Usamos required para indicar que es obligatorio rellenar ese campo -->
+                        </div>
+                        <div class="formularioregistro distancia5">
+                            <label>Fecha nacimiento: </label>
+                            <input type="text" name="fecha" id="fecha" placeholder="dd/mm/aaaa" required>
+                        </div>
+                        <div class="formularioregistro distancia5">
+                            <label>Correo electrónico: </label>
+                            <input type="text" name="e-mail" id="e-mail" placeholder="email@ejemplo.com" required>
+                        </div>
+                        <div class="formularioregistro distancia5">
+                            <label>DNI: </label>
+                            <input type="text" name="dni" id="dni" placeholder="Introduzca DNI" required maxlength="9"> <!-- Usamos maxlength para indicar el número máximo de caracteres que podemos introducir -->
+                        </div>
+                    </div>
+
+                    <!-- Columna de datos de la derecha -->
+                    <div class="contenido-formulario">
+                        <div class="formularioregistro distancia5">
+                            <label>Código postal: </label>
+                            <input type="text" name="codigo" id="codigo" placeholder="Introduzca código postal" required oninput="asignarPoblacion()" maxlength="5"> <!-- Invocamos a la funcion asignarPoblacion para hacer que el campo de la población se rellene automáticamente al introducir el código usando oninput -->
+                        </div>
+                        <div class="formularioregistro distancia5">
+                            <label>Población: </label>
+                            <input type="text" name="poblacion" id="poblacion" placeholder="Introduzca población" required readonly> <!-- Usamos readonly para indicar que este campo sólo se puede leer -->
+                        </div>
+                        <div class="formularioregistro distancia5">
+                            <label>Usuario: </label>
+                            <input type="text" name="usuario" id="usuario" placeholder="Introduzca usuario" required>
+                        </div>
+                        <div class="formularioregistro distancia5">
+                            <label>Contraseña: </label>
+                            <input type="text" name="contraseña" id="contraseña" placeholder="Introduzca contraseña" required>
+                        </div>
+                        <div class="formularioregistro distancia5">
+                            <label>Rt. contraseña: </label>
+                            <input type="text" name="contraseña2" id="contraseña2" placeholder="Repita contraseña" required>
+                        </div>
+                    </div>
+                </div>
+                <!-- Botones para aceptar e iniciar sesión -->
+                <div class="formulario-botones distancia">
+                    <a onclick="validarFormulario()" class="boton-socio">Acceder</a> <!-- Invocamos a la función validarformulario() con onclick para hacer que el formulario se valide al hacer click en aceptar -->
+                    <a href="Inicio-Sesion.html" class="boton-socio distancia5">Iniciar sesión</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Creamos el footer de la página -->
+    <footer class="bckg-footer distancia4">
+        <div id="footer-logo">
+
+            <figure>
+                <img src="img/icono-logo.png" width="150" alt="logo imagen"> <!-- Logo -->
+            </figure>
+
+            <div id="secciones-footer"> <!-- Secciones del footer -->
+
+                <ul> <!-- Lista con los enlaces de interés -->
+                    <li><a href="Informacion.html" class="color-text">Información</a></li>
+                    <li><a href="Proyectos-Arduino.html" class="color-text">Proyectos Arduino</a></li>
+                    <li><a href="Videojuegos.html" class="color-text">Videojuegos</a></li>
+                    <li><a href="Principal.html" class="color-text">Inicio</a></li>
+                </ul>
+
+                <ul> <!-- Lista con info -->
+                    <li>Autor: Noé Andreu</li>
+                    <li>Grado TIDM</li>
+                    <li>Proyecto 3: Aplicación interactiva</li>
+                    <li>Universitat Oberta de Catalunya (UOC)</li>
+                </ul>
+
+                <!-- Parte de las redes sociales -->
+                <section id="redes">
+                    <div>
+                        <figure>
+                            <img src="img/instagram.png" width="30" alt="instagram imagen">
+                        </figure>
+                        <a href="#">#ardu_game</a>
+                    </div>
+
+                    <div>
+                        <figure>
+                            <img src="img/twitter.png" width="40" alt="twitter imagen">
+                        </figure>                   
+                        <a href="#">@ardu_game</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

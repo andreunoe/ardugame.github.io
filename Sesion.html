@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/712575d4a5.js" crossorigin="anonymous"></script> <!-- Icono buscador -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> <!-- Traductor -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario-Sesion ArduGame</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Archivo css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+15:wght@400;700&display=swap"> <!-- Tipografía jersey -->
+    <link rel="icon" href="img/icono-logo.png"> <!-- Logo de la pestaña -->
+    <script src="script.js"></script> <!-- Archivo js -->
+</head>
+<body>
+    <div id="google_translate_element"></div> <!-- Declaramos el traductor -->
+
+    <!-- Cabecera con el margen superior -->
+    <header>
+        <div class="navBar">
+            <div class="container">
+                <div class="logo"> <!-- Logo -->
+                    <a href="Principal.html"><img src="img/icono-logo.png" alt="Logo Web" id="logo-web"></a>
+                </div>
+
+                <nav> <!-- Menú -->
+                    <ul id="lista-menu">
+                      <li><a href="Principal.html" class="bordes-separacion">INICIO</a></li>
+                      <li><a href="Informacion.html" class="bordes-separacion">INFORMACIÓN</a></li>
+                      <li><a href="Proyectos-Arduino.html" class="bordes-separacion">PROYECTOS ARDUINO</a></li>
+                      <li><a href="Videojuegos.html" class="bordes-separacion">VIDEOJUEGOS</a></li>
+                    </ul>
+                </nav>
+
+                <div id="Buscador"> <!-- Buscador -->
+                    <input type="text" id="searchInput" placeholder="Buscar" required>
+                    <ul id="searchResults"></ul>
+                    <div id="logo-buscar">
+                        <i class="fas fa-search icon"></i>
+                    </div>
+                </div>
+
+                <ul id="lista-iconos"> <!-- Iconos de usuario e idioma -->
+                    <li><a href="Sesion.html"><img src="img/usuario.png" alt="usuario" class="icono activo-icono"></a></li>
+                    <li><a href="#" id="idiomas-traduccion"><img src="img/idiomas.png" alt="idiomas" class="icono"></a>
+                        <select name="select" id="idiomas" style="display: none;"> <!-- Selector con las opciones de idioma -->
+                            <optgroup label="Idiomas">
+                                <option value="es">Español</option>
+                                <option value="en">Inglés</option>
+                                <option value="fr">Francés</option>
+                                <option value="de">Alemán</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                    <div id="google_translate_element" style="display: block;"></div>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cuerpo de la página -->
+    <main id="fondo-iconos"> <!-- Imagen de los laterales -->
+        <div class="container-iconos"> <!-- Contenedor del cuerpo de la página -->
+            <h1>Hazte Socio</h1> <!-- Título de la página -->
+
+            <!-- Botones para el inicio de sesión y el registro -->
+            <section class="botones-colocacion">
+                <a href="Inicio-Sesion.html" alt="Iniciar Sesion" class="boton-socio">Iniciar Sesión</a>
+                <a href="Registrate.html" alt="Registrarse" class="boton-socio distancia3">Registrarse</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Creamos el footer de la página -->
+    <footer class="bckg-footer distancia4">
+        <div id="footer-logo">
+
+            <figure>
+                <img src="img/icono-logo.png" width="150" alt="logo imagen"> <!-- Logo -->
+            </figure>
+
+            <div id="secciones-footer"> <!-- Secciones del footer -->
+
+                <ul> <!-- Lista con los enlaces de interés -->
+                    <li><a href="Informacion.html" class="color-text">Información</a></li>
+                    <li><a href="Proyectos-Arduino.html" class="color-text">Proyectos Arduino</a></li>
+                    <li><a href="Videojuegos.html" class="color-text">Videojuegos</a></li>
+                    <li><a href="Principal.html" class="color-text">Inicio</a></li>
+                </ul>
+
+                <ul> <!-- Lista con info -->
+                    <li>Autor: Noé Andreu</li>
+                    <li>Grado TIDM</li>
+                    <li>Proyecto 3: Aplicación interactiva</li>
+                    <li>Universitat Oberta de Catalunya (UOC)</li>
+                </ul>
+
+                <!-- Parte de las redes sociales -->
+                <section id="redes">
+                    <div>
+                        <figure>
+                            <img src="img/instagram.png" width="30" alt="instagram imagen">
+                        </figure>
+                        <a href="#">#ardu_game</a>
+                    </div>
+
+                    <div>
+                        <figure>
+                            <img src="img/twitter.png" width="40" alt="twitter imagen">
+                        </figure>                   
+                        <a href="#">@ardu_game</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/712575d4a5.js" crossorigin="anonymous"></script> <!-- Icono buscador -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> <!-- Traductor -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProyectosArduino-Ardugame</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Archivo css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+15:wght@400;700&display=swap"> <!-- Tipografía jersey -->
+    <link rel="icon" href="img/icono-logo.png"> <!-- Logo de la pestaña -->
+    <script src="script.js"></script> <!-- Archivo js -->
+</head>
+<body>
+    <div id="google_translate_element"></div> <!-- Declaramos el traductor -->
+
+    <!-- Cabecera con el margen superior -->
+    <header>
+        <div class="navBar">
+            <div class="container">
+                <div class="logo"> <!-- Logo -->
+                    <a href="Principal.html"><img src="img/icono-logo.png" alt="Logo Web" id="logo-web"></a>
+                </div>
+
+                <nav> <!-- Menú -->
+                    <ul id="lista-menu">
+                      <li><a href="Principal.html" class="bordes-separacion">INICIO</a></li>
+                      <li><a href="Informacion.html" class="bordes-separacion">INFORMACIÓN</a></li>
+                      <li><a href="Proyectos-Arduino.html" id="active" class="bordes-separacion">PROYECTOS ARDUINO</a></li>
+                      <li><a href="Videojuegos.html" class="bordes-separacion">VIDEOJUEGOS</a></li>
+                    </ul>
+                </nav>
+
+                <div id="Buscador"> <!-- Buscador -->
+                    <input type="text" id="searchInput" placeholder="Buscar" required>
+                    <ul id="searchResults"></ul>
+                    <div id="logo-buscar">
+                        <i class="fas fa-search icon"></i>
+                    </div>
+                </div>
+
+                <ul id="lista-iconos"> <!-- Iconos de usuario e idioma -->
+                    <li><a href="Sesion.html"><img src="img/usuario.png" alt="usuario" class="icono"></a></li>
+                    <li><a href="#" id="idiomas-traduccion"><img src="img/idiomas.png" alt="idiomas" class="icono"></a>
+                        <select name="select" id="idiomas" style="display: none;"> <!-- Selector con las opciones de idioma -->
+                            <optgroup label="Idiomas">
+                                <option value="es">Español</option>
+                                <option value="en">Inglés</option>
+                                <option value="fr">Francés</option>
+                                <option value="de">Alemán</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cuerpo de la página -->
+    <main class="container"> <!-- Contenedor del cuerpo de la página -->
+        <div class="video-container"> <!-- Vídeo de la parte superior -->
+            <video width="100%" height="500" autoplay loop> <!-- Se reproduce automáticamente siempre -->
+                <source src="img/video-cabecera.mp4" type="video/mp4">
+            </video>
+        </div>
+        <figure id="logotipo"> <!-- Logotipo sobre el vídeo -->
+            <img src="img/logo.png" width="500" height="100" alt="logotipo">
+        </figure>
+    
+        <h1>PROYECTOS ARDUINO</h1> <!-- Título de la página -->
+        <section id="intro-seccion"> <!-- Recuadro de introducción a la página -->
+            <p class="texto2">Aquí todos nuestros increíbles proyectos basados en Arduino.</p>
+            <p class="texto3">¡Disfrutad!</p>
+        </section>
+
+        <!-- Creamos el apartado -->
+        <section class="distancia">
+            <h3>Nuestros proyectos</h3> <!-- Título del apartado -->
+            <div class="info-apartados">
+                <!-- Imagen con el título de los contenidos -->
+                <div class="proyecto"> <!-- Proyecto 1 -->
+                    <div>
+                        <figure>
+                            <img src="img/flappy_arduino.png" width="250" alt="Proyecto Flappy Bird imagen">
+                        </figure>
+                    </div>
+                    <h5 class="textnoticias"><a class="notip" href="Flappy_Arduino.html">Flappy Bird Arduino</a></h5>
+                </div>
+
+                <div class="proyecto"> <!-- Proyecto 2 -->
+                    <div>
+                        <figure>
+                            <img src="img/pong_arduino.png" width="250"  height="210" alt="Proyecto Pong imagen">
+                        </figure>
+                    </div>
+                    <h5 class="textnoticias"><a class="notip" href="Pong_Arduino.html">Pong Arduino</a></h5>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Creamos el footer de la página -->
+    <footer class="bckg-footer distancia">
+        <div id="footer-logo">
+
+            <figure>
+                <img src="img/icono-logo.png" width="150" alt="logo imagen"> <!-- Logo -->
+            </figure>
+
+            <div id="secciones-footer"> <!-- Secciones del footer -->
+
+                <ul> <!-- Lista con los enlaces de interés -->
+                    <li><a href="Informacion.html" class="color-text">Información</a></li>
+                    <li><a href="Proyectos-Arduino.html" class="color-text">Proyectos Arduino</a></li>
+                    <li><a href="Videojuegos.html" class="color-text">Videojuegos</a></li>
+                    <li><a href="Principal.html" class="color-text">Inicio</a></li>
+                </ul>
+
+                <ul> <!-- Lista con info -->
+                    <li>Autor: Noé Andreu</li>
+                    <li>Grado TIDM</li>
+                    <li>Proyecto 3: Aplicación interactiva</li>
+                    <li>Universitat Oberta de Catalunya (UOC)</li>
+                </ul>
+
+                <!-- Parte de las redes sociales -->
+                <section id="redes">
+                    <div>
+                        <figure>
+                            <img src="img/instagram.png" width="30" alt="instagram imagen">
+                        </figure>
+                        <a href="#">#ardu_game</a>
+                    </div>
+
+                    <div>
+                        <figure>
+                            <img src="img/twitter.png" width="40" alt="twitter imagen">
+                        </figure>                   
+                        <a href="#">@ardu_game</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,648 @@
+@import url('https://fonts.cdnfonts.com/css/futura-md-bt');  /*Importamos el tipo de letra futura*/
+
+/*Página de start*/
+.bckg{
+    background-image: url(img/Fondo_start.png);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+.boton{ /*Boton para acceder a la página principal*/
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    background: #0000;
+    color: cornflowerblue;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer; /*Tipo de marcador sobre el botón*/
+    border: 5px solid cornflowerblue;
+    font-family: 'Jersey 15', sans-serif;
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+.boton:hover, .boton:focus{ /*Botón hover y pulsado*/
+    background: #0000;
+    border: 5px solid greenyellow;
+    color: greenyellow;
+    box-shadow: 0px 20px 20px 10px cornflowerblue;
+}
+
+/*Ahora, comenzamos con el resto de las páginas*/
+.container{ /*Container que establece los margenes del cuerpo de las páginas*/
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*Comenzamos por el margen superior*/
+/*Creamos el menú de secciones del margen superior*/
+.navBar {
+    position: fixed; /*Fijamos la posición*/
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    padding: 1em 0;
+    background-image: url(img/Fondo-cabecera.png);
+    background-size: cover;
+    background-position: center;
+    height: 160px;
+    border-radius: 10px;
+}
+nav ul{ /*Lista del menú*/
+    margin-left: 0px;
+}
+nav li{ /*Elementos de la lista del menú*/
+    display: inline-block; /*Elementos en línea y en bloque*/
+    align-items: end;
+    text-align: right; /*Alineamos el texto a la derecha*/
+    margin-left: 0px;
+}
+nav a{ /*Enlaces de la lista*/
+    width: 100%;
+    margin-top: 50px;
+    font-family: 'Jersey 15', sans-serif;
+    padding: 20px;
+    color: cornflowerblue;
+    text-decoration: none;
+    font-size: 18px;
+}
+/*Aspectos relativos a los iconos del margen superior*/
+.icono{
+    width: 31px;
+    padding: 10px;
+}
+#idiomas{ /*Desplegable del traductor*/
+    position: absolute;
+}
+#lista-iconos{ /*Iconos del usuario y traductor*/
+    display: flex;
+    flex-flow: wrap; /*Línea*/
+    justify-content:flex-end;
+    position: relative;
+    list-style-type: none; /*Los elementos de las listas no tienen marcador*/
+    padding: 20px 10px;
+    top: -13em;
+    right: -5em;
+}
+/*Características del logo*/
+#logo-web{
+    width: 170px;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+}
+/*Aspecto e interacción con los elementos del menú*/
+#lista-menu{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -3em;
+    margin-left: -8em;
+}
+#lista-menu li a{ /*Enlaces de las secciones*/
+    margin-right: 10px;
+}
+.bordes-separacion{
+    border: 5px solid transparent;
+}
+#lista-menu li a:hover{
+    color: greenyellow;
+    border: 5px solid greenyellow;
+}
+#active{ /*Diferenciamos la página en la que estamos*/
+    border-bottom: 5px solid greenyellow;
+    color: greenyellow;
+}
+/*Características del buscador*/
+#Buscador{
+    position: relative; /*Posición relativa*/
+    display: flex;
+    justify-content: flex-end;
+    top: -3em;
+    right: -5em;
+}
+#Buscador input{
+    border-radius: 30px;
+    background: none; /*Sin fondo en el input*/
+    padding: 5px;
+    width: 150px;
+    border: 1px solid #F39200;
+    color: #F39200;
+}
+#logo-buscar{
+    position: relative;
+    background: #F39200;
+    left: -1.5em;
+    width: 30px;
+    height: 30px;
+    color: black;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Ahora, establecemos la apareincia del cuerpo de las páginas*/
+body{
+    background-image: url("img/imagen-fondo.jpg"); /*Imagen de fondo*/
+    background-size: cover; /*Realizamos los detalles que hacen que se extienda a toda la pantalla, no se repita...*/
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*Vídeo de la cabecera*/
+.video-container{
+    width: 100%;
+    height: 500px; 
+    overflow: hidden; /*Ocultamos cualquier parte del video que se extienda más allá del contenedor*/
+    position: relative; /*Posición relativa*/
+}
+.video-container video{
+    width: 100%;
+    height: auto;
+    margin-top: 180px;
+    z-index: 0;
+}
+/*Logotipo sobre el vídeo*/
+#logotipo{
+    text-align: center;
+    margin-top: -12em;
+    z-index: 1; /*Nos aseguramos que se pueda ver en todos los buscadores*/
+    position: absolute;
+    left: 32.5%;
+}
+
+/*Establecemos las características de los cuadros de introducción*/
+#intro{
+    margin-top: 8em;
+    padding: 50px;
+    border-radius: 50px;
+    border: 5px solid cornflowerblue;
+}
+#intro p{
+    width: 1000px;
+    text-align: center;
+    margin-left: 80px;
+}
+
+/*Clases que usaremos para dar el aspecto de diferentes textos*/
+.texto{
+    font-size: 30px; /*Tamaño del texto*/
+    font-weight: bold; /*Texto en negrita*/
+    color: cornflowerblue;
+    left: 50%;
+    font-family: 'Jersey 15', sans-serif;
+}
+.texto2{
+    font-size: 15px;
+    font-family: 'Futura Md BT', sans-serif; /*Tipografía del texto*/
+    color: black;
+}
+.texto3{
+    font-size: 15px;
+    font-family: 'Futura Md BT', sans-serif;
+    font-weight: bold;
+    color: #F39200; /*Color del texto*/
+}
+
+/*Clases que usaremos para las distancias de los contenidos en vertical*/
+.distancia{
+    margin-top: 5em;
+}
+.distancia2{
+    margin-top: 15em;
+}
+.distancia3{
+    margin-top: 30px;
+}
+.distancia4{
+    margin-top: -2em;
+}
+
+/*Títulos y subtítulos de las secciones*/
+h2{
+    font-family: 'Jersey 15', sans-serif;
+    font-size: 50px;
+    color: #F39200;
+    border-bottom: 5px solid #F39200;
+    width: 1280px;
+}
+h1{
+    font-family: 'Jersey 15', sans-serif;
+    font-size: 70px;
+    color: black;
+    margin-top: 2em;
+    text-align: center;
+}
+h3{
+    font-family: 'Jersey 15', sans-serif;
+    font-size: 50px;
+    color: black;
+    border-bottom: 5px solid black;
+    width: 1280px;
+    text-align: center;
+}
+
+/*Aspecto y distribución de los contenidos y apartados en las secciones*/
+.apartados{
+    display: flex; /*Organización flex*/
+    flex-flow: row wrap; /*Filas*/
+    justify-content: space-around; /*Repartirse el espacio*/
+    align-items: center; /*Alineamos en el centro*/
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+.apartados a{
+    text-decoration: none; /*Enlaces sin subrayado*/
+    text-align: center; /*Alineamos el texto en el centro*/
+}
+#intro-seccion{
+    margin-top: 2em;
+    padding: 30px;
+    border-radius: 50px;
+    background-color: lavender;
+    text-align: center;
+}
+#info{
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 15px;
+    color: black;
+    text-align: left;
+}
+.info-apartados{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*Detalles de las fichas de los proyectos o videojuegos*/
+.proyecto{
+    display: flex;
+    flex-flow: column; /*Organización en columna*/
+    justify-content: center; /*Alineación en el centro*/
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.proyecto:hover{
+    background-color: white;
+    box-shadow: 0 20px 10px #F39200;
+    border: 3px solid #F39200;
+}
+h5 a{
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+h5 a:hover{
+    color: cornflowerblue;
+    text-decoration: underline; /*Subrayado*/
+}
+
+/*Aspecto del desplegable de las categorías*/
+#mostrarDesplegable{
+    display: block;
+    margin: 0 auto; 
+}
+#categorias{
+    display: none; /*Se muestra oculto*/
+    position: absolute; /*Posición absoluta*/
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*Alineamos en el centro*/
+    background-color: black; /*Color del fondo*/
+    color: white;
+    border-radius: 10px; /*Radio de los bordes*/
+    border-left: 5px solid cornflowerblue; /*Borde izquierdo*/
+    border-right: 5px solid cornflowerblue; /*Borde derecho*/
+    border-bottom: 5px solid cornflowerblue; /*Borde inferior*/
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 500px;
+    margin-top: 25em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/*Ahora, establecemos la apariencia de las páginas de usuario, registro...*/
+#fondo-iconos{
+    background-image: url("img/Fondo_lados.png"); /*Imagen de los lados*/
+    background-size: cover;
+    background-position: center;
+}
+.container-iconos{ /*Contenedor del cuerpo de estas páginas*/
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 10em;
+    padding-top: 0.1em;
+    padding-bottom: 12em;
+}
+.botones-colocacion{ /*Colocación de los botones*/
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10em;
+    border-top: solid 5px #F39200;
+    border-radius: 20px;
+    background-color: #f7cba2;
+    padding: 5em;
+    margin-left: 10em;
+    margin-right: 10em;
+}
+
+/*Aspecto de los botones*/
+.boton-socio{
+    background-color: cornflowerblue;
+    border: solid 3px cornflowerblue; /*Tamaño y color de los bordes*/
+    border-radius: 10px;
+    padding: 1%;
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    width: 150px;
+}
+.boton-socio:hover{
+    color: cornflowerblue;
+    box-shadow: 0 10px 10px #F39200; /*Efecto de sombra sobre los botones*/
+    background-color: white;
+}
+/*Campos de inputs y disposición de los botones*/
+.elementos-inicio{
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: black;
+    font-size: 20px;
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+.disposicion-botones{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.cuadro-input{
+    border-radius: 5px;
+    border: 0.2em solid #F39200;
+    height: 20px;
+    background-color: white;
+    margin-top: 1em;
+    width: 200px;
+}
+.cuadro-input:hover, .cuadro-input:focus{
+    background-color: black;
+    border: 0.2em solid cornflowerblue;
+    color: cornflowerblue;
+}
+
+/*Páginas de los proyectos y los videojuegos*/
+.titulo-contenido{
+    color: #F39200;
+    text-align: start; /*Alineamos al comienzo*/
+}
+.info-codigo{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+#info-juego{
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+}
+.img-org{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#video-juegos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/*Contenido de la página de mi cuenta*/
+.titulo-cuenta{
+    color: black;
+    text-align: start;
+    margin-left: 1em;
+}
+.contenido-cuenta{
+    font-family: 'Jersey 15', sans-serif;
+    font-size: 30px;
+    color: #F39200;
+    border-bottom: 3px solid #F39200;
+    width: 1220px;
+    margin-left: 1em;
+}
+button{
+    margin-top: -5em;
+    margin-left: 50em;
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    background: white;
+    border-radius: 5px;
+    border: solid 5px cornflowerblue;
+    color: cornflowerblue;
+    font-family: 'Futura Md BT', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+button a{
+    color: cornflowerblue;
+    text-decoration: none;
+}
+button a:hover{
+    color: #F39200;
+}
+.activo-icono{
+    border-radius: 50px;
+    border: solid 1px greenyellow;
+}
+
+/*Establecemos el aspecto del formulario de registro*/
+.formularioregistro{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    color: cornflowerblue;
+    font-size: 15px;
+    font-family: 'Futura Md BT', sans-serif;
+}
+.contenido-formulario{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end; /*Alineamos al final*/
+}
+.disposicionformulario{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.formulario-botones{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.distancia5{
+    margin-top: 2em;
+}
+.disposicionformulario input{
+    border-color: cornflowerblue;
+    border-radius: 0.5em;
+    margin-left: 1em;
+}
+#cuadro-seccion{
+    margin-left: 5em;
+    margin-right: 5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 2em;
+    border: solid 0.25em #F39200;
+    text-align: center;
+}
+
+/*Aspecto del footer*/
+footer{
+    background: black;
+    color: white;
+    border-radius: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#footer-logo{ /*Logo del footer*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    align-items: center;
+}
+#secciones-footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+footer ul{ /*Listas del footer*/
+    list-style-type: none;
+}
+footer ul li{ /*Elementos de las listas del footer*/
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 1em;
+}
+footer a{ /*Enlaces de los elementos*/
+    text-decoration: none;
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+#redes{
+    margin-left: 5em;
+}
+.color-text{
+    color: cornflowerblue;
+}
+#redes a{
+    color: #F39200;
+}
+
+/*Ajustamos los detalles de los resultados del buscador*/
+#searchResults{
+    background: #f7cba2;
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 10px;
+    color: black;
+    position: absolute;
+    top: 100%;
+    left: 105em;
+    list-style-type: none;
+    border-radius: 10px;
+    max-height: 200px; /*Altura máxima*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#searchResults li {
+    text-align: center; /*Alineamos el texto del resultado en el centro*/
+    margin: 0px 0; /*Espacio entre los resultados*/
+    padding-right: 3em;
+}
+#searchResults a{
+    text-decoration: none;
+    color: black;
+}
+#searchResults a:hover, #searchResults a:focus{ /*Botones en hover o pulsados*/
+    color: #F39200;
+}
+
+/*Clase que marca los campos incorrectos en rojo*/
+.error{
+    background-color:rgb(234, 120, 120);
+}
+
+/*Finalmente, ajustamos los detalles de la página de subir un nuevo proyecto*/
+#disposicion-nuevo{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.area-seccion{
+    border-radius: 0.5em;
+    border: 0.25em solid cornflowerblue;
+    width: 40em;
+    height: 15em;
+    color: black;
+}
+.area-seccion:hover, .area-seccion:focus{
+    background-color: cornflowerblue;
+    color: white;
+}
+.disposicion-elementos{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: start;
+    padding: 2em;
+}
+.disposicion-elementos input{
+    color: black;
+}
+.texto5{
+    font-size: 15px;
+    font-family: 'Futura Md BT', sans-serif;
+    color: cornflowerblue;
+}
+#video-proyecto{
+    color: black;
+    padding-left: 1em;
+}

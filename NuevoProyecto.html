@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/712575d4a5.js" crossorigin="anonymous"></script> <!-- Icono buscador -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> <!-- Traductor -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Proyecto ArduGame</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Archivo css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+15:wght@400;700&display=swap"> <!-- Tipografía jersey -->
+    <link rel="icon" href="img/icono-logo.png"> <!-- Logo de la pestaña -->
+    <script src="script.js"></script> <!-- Archivo js -->
+</head>
+<body>
+    <div id="google_translate_element"></div> <!-- Declaramos el traductor -->
+
+    <!-- Cabecera con el margen superior -->
+    <header>
+        <div class="navBar">
+            <div class="container">
+                <div class="logo"> <!-- Logo -->
+                    <a href="Principal.html"><img src="img/icono-logo.png" alt="Logo Web" id="logo-web"></a>
+                </div>
+
+                <nav> <!-- Menú -->
+                    <ul id="lista-menu">
+                      <li><a href="Principal.html" class="bordes-separacion">INICIO</a></li>
+                      <li><a href="Informacion.html" class="bordes-separacion">INFORMACIÓN</a></li>
+                      <li><a href="Proyectos-Arduino.html" class="bordes-separacion">PROYECTOS ARDUINO</a></li>
+                      <li><a href="Videojuegos.html" class="bordes-separacion">VIDEOJUEGOS</a></li>
+                    </ul>
+                </nav>
+
+                <div id="Buscador"> <!-- Buscador -->
+                    <input type="text" id="searchInput" placeholder="Buscar" required>
+                    <ul id="searchResults"></ul>
+                    <div id="logo-buscar">
+                        <i class="fas fa-search icon"></i>
+                    </div>
+                </div>
+
+                <ul id="lista-iconos"> <!-- Iconos de usuario e idioma -->
+                    <li><a href="Sesion.html"><img src="img/usuario.png" alt="usuario" class="icono activo-icono"></a></li>
+                    <li><a href="#" id="idiomas-traduccion"><img src="img/idiomas.png" alt="idiomas" class="icono"></a>
+                        <select name="select" id="idiomas" style="display: none;"> <!-- Selector con las opciones de idioma -->
+                            <optgroup label="Idiomas">
+                                <option value="es">Español</option>
+                                <option value="en">Inglés</option>
+                                <option value="fr">Francés</option>
+                                <option value="de">Alemán</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cuerpo de la página -->
+    <main class="container"> <!-- Contenedor del cuerpo de la página -->
+        <h1 class="titulo-contenido distancia">Nuevo proyecto</h1> <!-- Título de la página -->
+
+        <section id="intro-seccion"> <!-- Recuadro de introducción a la página -->
+            <p class="texto2">Rellena los siguientes campos para subir un proyecto y participar en nuestra comunidad.</p>
+        </section>
+
+        <!-- Creamos un formulario con campos, inputs, imágenes, vídeos... -->
+        <form id="disposicion-nuevo" class="distancia" action="/upload" method="POST" enctype="multipart/form-data">
+
+            <!-- Separamos los campos en diferentes apartados -->
+            <h3>Título</h3> <!-- Título del apartado -->
+            <div class="disposicionformulario texto5">
+                <label for="title">Título del Proyecto:</label>
+                <input type="text" id="titulo" name="title" required> <!-- Input obligatorio con el nombre -->
+            </div>
+
+            <h3>Descripción del proyecto</h3> <!-- Título del apartado -->
+            <div class="disposicionformulario texto5">
+                <div class="disposicion-elementos">
+                    <label for="description">Haz una descripción del proyecto:</label>
+                    <textarea class="area-seccion" name="descripcion" required></textarea> <!-- Campo para la descripción del proyecto -->
+                </div>
+                <div class="disposicion-elementos">
+                    <input type="file" id="images" name="images" multiple accept="image/*"> <!-- Nos permite adjuntar una imagen -->
+                </div>
+            </div>
+
+            <h3>Materiales</h3> <!-- Título del apartado -->
+            <div class="disposicionformulario texto5">
+                <div class="disposicion-elementos">
+                    <label for="materiales">Enumera los materiales utilizados:</label>
+                    <textarea class="area-seccion" name="materiales" required></textarea> <!-- Campo para los materiales del proyecto -->
+                </div>
+                <div class="disposicion-elementos">
+                    <input type="file" id="images" name="images" multiple accept="image/*"> <!-- Nos permite adjuntar una imagen -->
+                </div>
+            </div>
+
+            <h3>El código</h3> <!-- Título del apartado -->
+            <div class="disposicionformulario texto5">
+                <div class="disposicion-elementos">
+                    <label for="codigo">Introduce el codigo utilizado:</label> <!-- Campo para el código del proyecto -->
+                    <textarea class="area-seccion" name="codigo" required></textarea>
+                </div>
+                <div class="disposicion-elementos">
+                    <input type="file" id="images" name="images" multiple accept="image/*"> <!-- Nos permite adjuntar una imagen -->
+                </div>
+            </div>
+
+            <h3>Paso a paso</h3> <!-- Título del apartado -->
+            <div class="disposicionformulario texto5">
+                <div class="disposicion-elementos">
+                    <label for="paso">Explica paso a paso la realización del proyecto:</label> <!-- Campo para los pasos del proyecto -->
+                    <textarea class="area-seccion" name="paso" required></textarea>
+                </div>
+                <div class="disposicion-elementos">
+                    <input type="file" id="images" name="images" multiple accept="image/*"> <!-- Nos permite adjuntar una imagen -->
+                </div>
+            </div>
+
+            <h3>El juego</h3> <!-- Título del apartado -->
+            <div class="disposicionformulario texto5">
+                <label for="proyecto">Adjunta un vídeo del proyecto:</label>
+                <input type="file" id="video-proyecto" name="video" accept="video/*"> <!-- Nos permite adjuntar un vídeo -->
+            </div>
+
+            <a href="#" class="boton-socio distancia">Subir Proyecto</a> <!-- Creamos el botón para subir el proyecto -->
+        </form>
+    </main>
+
+    <!-- Creamos el footer de la página -->
+    <footer class="bckg-footer distancia">
+        <div id="footer-logo">
+
+            <figure>
+                <img src="img/icono-logo.png" width="150" alt="logo imagen"> <!-- Logo -->
+            </figure>
+
+            <div id="secciones-footer"> <!-- Secciones del footer -->
+
+                <ul> <!-- Lista con los enlaces de interés -->
+                    <li><a href="Informacion.html" class="color-text">Información</a></li>
+                    <li><a href="Proyectos-Arduino.html" class="color-text">Proyectos Arduino</a></li>
+                    <li><a href="Videojuegos.html" class="color-text">Videojuegos</a></li>
+                    <li><a href="Principal.html" class="color-text">Inicio</a></li>
+                </ul>
+
+                <ul> <!-- Lista con info -->
+                    <li>Autor: Noé Andreu</li>
+                    <li>Grado TIDM</li>
+                    <li>Proyecto 3: Aplicación interactiva</li>
+                    <li>Universitat Oberta de Catalunya (UOC)</li>
+                </ul>
+
+                <!-- Parte de las redes sociales -->
+                <section id="redes">
+                    <div>
+                        <figure>
+                            <img src="img/instagram.png" width="30" alt="instagram imagen">
+                        </figure>
+                        <a href="#">#ardu_game</a>
+                    </div>
+
+                    <div>
+                        <figure>
+                            <img src="img/twitter.png" width="40" alt="twitter imagen">
+                        </figure>                   
+                        <a href="#">@ardu_game</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

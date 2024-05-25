@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/712575d4a5.js" crossorigin="anonymous"></script> <!-- Icono buscador -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> <!-- Traductor -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información ArduGame</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Archivo css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+15:wght@400;700&display=swap"> <!-- Tipografía jersey -->
+    <link rel="icon" href="img/icono-logo.png"> <!-- Logo de la pestaña -->
+    <script src="script.js"></script> <!-- Archivo js -->
+</head>
+<body>
+    <div id="google_translate_element"></div> <!-- Declaramos el traductor -->
+
+    <!-- Cabecera con el margen superior -->
+    <header>
+        <div class="navBar">
+            <div class="container">
+                <div class="logo"> <!-- Logo -->
+                    <a href="Principal.html"><img src="img/icono-logo.png" alt="Logo Web" id="logo-web"></a>
+                </div>
+
+                <nav> <!-- Menú -->
+                    <ul id="lista-menu">
+                      <li><a href="Principal.html" class="bordes-separacion">INICIO</a></li>
+                      <li><a href="Informacion.html" id="active" class="bordes-separacion">INFORMACIÓN</a></li>
+                      <li><a href="Proyectos-Arduino.html" class="bordes-separacion">PROYECTOS ARDUINO</a></li>
+                      <li><a href="Videojuegos.html" class="bordes-separacion">VIDEOJUEGOS</a></li>
+                    </ul>
+                </nav>
+
+                <div id="Buscador"> <!-- Buscador -->
+                    <input type="text" id="searchInput" placeholder="Buscar" required>
+                    <ul id="searchResults"></ul>
+                    <div id="logo-buscar">
+                        <i class="fas fa-search icon"></i>
+                    </div>
+                </div>
+
+                <ul id="lista-iconos"> <!-- Iconos de usuario e idioma -->
+                    <li><a href="Sesion.html"><img src="img/usuario.png" alt="usuario" class="icono"></a></li>
+                    <li><a href="#" id="idiomas-traduccion"><img src="img/idiomas.png" alt="idiomas" class="icono"></a>
+                        <select name="select" id="idiomas" style="display: none;"> <!-- Selector con las opciones de idioma -->
+                            <optgroup label="Idiomas">
+                                <option value="es">Español</option>
+                                <option value="en">Inglés</option>
+                                <option value="fr">Francés</option>
+                                <option value="de">Alemán</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cuerpo de la página -->
+    <main class="container"> <!-- Contenedor del cuerpo de la página -->
+        <div class="video-container"> <!-- Vídeo de la parte superior -->
+            <video width="100%" height="500" autoplay loop> <!-- Se reproduce automáticamente siempre -->
+                <source src="img/video-cabecera.mp4" type="video/mp4">
+            </video>
+        </div>
+        <figure id="logotipo"> <!-- Logotipo sobre el vídeo -->
+            <img src="img/logo.png" width="500" height="100" alt="logotipo">
+        </figure>
+    
+        <h1>INFORMACIÓN</h1> <!-- Título de la página -->
+        <section id="intro-seccion"> <!-- Recuadro de introducción a la página -->
+            <p class="texto2">En la siguiente página podremos ver toda la información relevante al proyecto, para así, entender en qué consiste y sus objetivos.</p>
+            <p class="texto3">¡Esperamos que os guste!</p>
+        </section>
+
+        <!-- Creamos los diferentes apartados -->
+        <section class="distancia"> <!-- Apartado 1 -->
+            <h3>¿Qué es ArduGame?</h3> <!-- Título del apartado -->
+            <div class="info-apartados">
+                <div>
+                    <figure> <!-- Imagen del logo -->
+                        <img src="img/icono-logo.png" width="250" alt="Proyecto Flappy Bird imagen">
+                    </figure>
+                </div>
+
+                <div id="info"> <!-- Descripción del proyecto -->
+                    <p>ArduGame es un pequeño proyecto que combina la electrónica con los videojuegos y la programación (con Arduino y Processing) para dar vida a una web en la que se expondrán todos ellos.</p>
+                    <p>En nuestra página, encontrarás una variedad de proyectos, tutoriales y recursos para ayudarte a sumergirte en este emocionante mundo. Ya seas un principiante curioso o un veterano experimentado, ¡aquí hay algo para todos!</p>
+                    <p>La autoría del proyecto pertenece a Noé Andreu.</p>
+                    <p>Proyecto realizado para la asignatura de "Proyecto3. Aplicación Interactiva", grado TIDM, Universitat Oberta de Catalunya (UOC).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="distancia"> <!-- Apartado 2 -->
+            <h3>Arduino, la base de todo</h3> <!-- Título del apartado -->
+            <div class="info-apartados">
+                <!-- Cambiamos el orden explicación-imagen para que se invierta su disposición en la página -->
+                <div id="info"> <!-- Explicación del Arduino -->
+                    <p>Arduino es una plataforma de hardware de código abierto que se utiliza en el mundo de la electrónica y la informática. Consiste en una placa de circuito impreso con un microcontrolador y un entorno de desarrollo de software fácil de usar.
+                        En resumen, Arduino permite a los usuarios crear proyectos interactivos y dispositivos electrónicos de una manera accesible y asequible, sin necesidad de tener conocimientos avanzados en electrónica o programación.
+                    </p>
+                    <p>La razón por la que hemos escogido este hardware es por la amplia versatilidad que nos ofrece a la hora de crear proyectos, y la sencillez con la que nos permite llevarlos a cabo.</p>
+                    <p>En cuanto a los proyectos que podemos realizar con él, podemos llevar a cabo casi cualquier cosa que se nos ocurra. Sin embargo, nosotros nos centraremos en los videojuegos.</p>
+                </div>
+
+                <div>
+                    <figure> <!-- Imagen del Arduino -->
+                        <img src="img/arduino.png" width="250" alt="Placa Arduino imagen">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="distancia"> <!-- Apartado 3 -->
+            <h3>¿Cómo subir un proyecto?</h3> <!-- Título del apartado -->
+            <div class="info-apartados">
+                <div>
+                    <figure> <!-- Imagen de la página para subir un proyecto -->
+                        <img src="img/SubirArchivo.png" width="350" alt="Placa Arduino imagen">
+                    </figure>
+                </div>
+
+                <div id="info"> <!-- Explicación de cómo subir un proyecto -->
+                    <p>Sí, cualquiera puede subir un proyecto, ¡el único requisito es que sea un videojuego!</p>
+                    <p>Para ello, sólo tendremos que registrarnos en la web y ¡listo!, ya tendremos la opción de subir nuestros proyectos.</p>
+                    <p>El objetivo es crear una gran comunidad gamer, en al que todos aprendamos, progresemos y nos divirtamos juntos.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Creamos el footer de la página -->
+    <footer class="bckg-footer distancia">
+        <div id="footer-logo">
+
+            <figure>
+                <img src="img/icono-logo.png" width="150" alt="logo imagen"> <!-- Logo -->
+            </figure>
+
+            <div id="secciones-footer"> <!-- Secciones del footer -->
+
+                <ul> <!-- Lista con los enlaces de interés -->
+                    <li><a href="Informacion.html" class="color-text">Información</a></li>
+                    <li><a href="Proyectos-Arduino.html" class="color-text">Proyectos Arduino</a></li>
+                    <li><a href="Videojuegos.html" class="color-text">Videojuegos</a></li>
+                    <li><a href="Principal.html" class="color-text">Inicio</a></li>
+                </ul>
+
+                <ul> <!-- Lista con info -->
+                    <li>Autor: Noé Andreu</li>
+                    <li>Grado TIDM</li>
+                    <li>Proyecto 3: Aplicación interactiva</li>
+                    <li>Universitat Oberta de Catalunya (UOC)</li>
+                </ul>
+
+                <!-- Parte de las redes sociales -->
+                <section id="redes">
+                    <div>
+                        <figure>
+                            <img src="img/instagram.png" width="30" alt="instagram imagen">
+                        </figure>
+                        <a href="#">#ardu_game</a>
+                    </div>
+
+                    <div>
+                        <figure>
+                            <img src="img/twitter.png" width="40" alt="twitter imagen">
+                        </figure>                   
+                        <a href="#">@ardu_game</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

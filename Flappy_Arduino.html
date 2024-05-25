@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/712575d4a5.js" crossorigin="anonymous"></script> <!-- Icono buscador -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> <!-- Traductor -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArduFlappy</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Archivo css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+15:wght@400;700&display=swap"> <!-- Tipografía jersey -->
+    <link rel="icon" href="img/icono-logo.png"> <!-- Logo de la pestaña -->
+    <script src="script.js"></script> <!-- Archivo js -->
+</head>
+<body>
+    <div id="google_translate_element"></div> <!-- Declaramos el traductor -->
+
+    <!-- Cabecera con el margen superior -->
+    <header>
+        <div class="navBar">
+            <div class="container">
+                <div class="logo"> <!-- Logo -->
+                    <a href="Principal.html"><img src="img/icono-logo.png" alt="Logo Web" id="logo-web"></a>
+                </div>
+
+                <nav> <!-- Menú -->
+                    <ul id="lista-menu">
+                      <li><a href="Principal.html" class="bordes-separacion">INICIO</a></li>
+                      <li><a href="Informacion.html" class="bordes-separacion">INFORMACIÓN</a></li>
+                      <li><a href="Proyectos-Arduino.html" id="active" class="bordes-separacion">PROYECTOS ARDUINO</a></li>
+                      <li><a href="Videojuegos.html" class="bordes-separacion">VIDEOJUEGOS</a></li>
+                    </ul>
+                </nav>
+
+                <div id="Buscador"> <!-- Buscador -->
+                    <input type="text" id="searchInput" placeholder="Buscar" required>
+                    <ul id="searchResults"></ul>
+                    <div id="logo-buscar">
+                        <i class="fas fa-search icon"></i>
+                    </div>
+                </div>
+
+                <ul id="lista-iconos"> <!-- Iconos de usuario e idioma -->
+                    <li><a href="Sesion.html"><img src="img/usuario.png" alt="usuario" class="icono"></a></li>
+                    <li><a href="#" id="idiomas-traduccion"><img src="img/idiomas.png" alt="idiomas" class="icono"></a>
+                        <select name="select" id="idiomas" style="display: none;"> <!-- Selector con las opciones de idioma -->
+                            <optgroup label="Idiomas">
+                                <option value="es">Español</option>
+                                <option value="en">Inglés</option>
+                                <option value="fr">Francés</option>
+                                <option value="de">Alemán</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cuerpo de la página -->
+    <main class="container"> <!-- Contenedor del cuerpo de la página -->
+        <div class="video-container"> <!-- Vídeo de la parte superior -->
+            <video width="100%" height="500" autoplay loop> <!-- Se reproduce automáticamente siempre -->
+                <source src="img/video-cabecera.mp4" type="video/mp4">
+            </video>
+        </div>
+        <figure id="logotipo"> <!-- Logotipo sobre el vídeo -->
+            <img src="img/logo.png" width="500" height="100" alt="logotipo">
+        </figure>
+    
+        <h1 class="titulo-contenido">FLAPPY ARDUINO</h1> <!-- Título de la página -->
+        <section id="intro-seccion"> <!-- Recuadro de introducción a la página -->
+            <p class="texto2">A continuación, les mostramos uno de los juegos retro por excelencia, el Flappy Bird, adaptado para Arduino.</p>
+            <p class="texto3">¡Disfrutad del juego!</p>
+        </section>
+
+        <!-- Creamos los diferentes apartados -->
+        <section class="distancia"> <!-- Apartado 1 -->
+            <h3>Descripción del proyecto</h3> <!-- Título del apartado -->
+            <div class="info-apartados">
+                <div>
+                    <figure> <!-- Imagen del proyecto -->
+                        <img src="img/flappy/flappy-real.png" width="250" alt="Proyecto Flappy Bird imagen">
+                    </figure>
+                </div>
+
+                <div id="info"> <!-- Descripción del proyecto -->
+                    <p>El proyecto consiste en el juego tradicional del flappy bird, pero adaptado a Arduino. En él, tendremos que controlar el vuelo de un pájaro e intentar sobrepasar los diferentes obstáculos del camino. Cada vez que sobrepasemos uno, sumaremos un punto.</p>
+                    <p>Para ello, tendremos que mover la palma de la mano arriba y abajo sobre un sensor de distancia, y el pájaro subirá y bajará respectivamente.</p>
+                    <p>Además, tendremos otras funcionalidades como una luz led que se enciende a medida nos acercamos al sensor, un buzzer que pita cuando nos chocamos y una pantalla lcd en la que se muestran diferentes mensajes de interés.</p>
+                    <p>Autor: Noé Andreu.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="distancia"> <!-- Apartado 2 -->
+            <h3>Materiales</h3> <!-- Título del apartado -->
+            <div class="info-apartados">
+                <div>
+                    <figure> <!-- Imagen de los materiales -->
+                        <img src="img/flappy/materiales_flappy.png" width="250" alt="Proyecto Flappy Bird imagen">
+                    </figure>
+                </div>
+
+                <div id="info"> <!-- Lista con los materiales -->
+                    <p>Los materiales que necesitaremos para implementar nuestro Pong Arduino son:</p>
+                    <ul>
+                        <li>Arduino UNO</li>
+                        <li>1 Buzzer</li>
+                        <li>1 Pantalla lcd</li>
+                        <li>1 Potenciómetro</li>
+                        <li>1 Led, no importa el color</li>
+                        <li>1 Sensor HC-SR04</li>
+                        <li>2 Resistencias 1 KiloOhmnio</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="distancia"> <!-- Apartado 3 -->
+            <h3>El código</h3> <!-- Título del apartado -->
+            <div class="info-codigo">
+                <div id="info-juego">
+                    <p>Ahora, se muestra el código comentado que se ha implementado tanto en Processing como en Arduino para crear el juego.</p>
+                    <p>Entre ambas partes, se producirá una comunicación serial para hacer funcionar el juego de forma correcta.</p>
+
+                </div>
+                <div class="img-org"> <!-- Código del proyecto en imágenes -->
+                    <figure>
+                        <img src="img/flappy/CA_F1.png" width="500" alt="Código laberinto 1">
+                    </figure>
+
+                    <figure>
+                        <img src="img/flappy/CA_F2.png" width="500" alt="Código laberinto 2">
+                    </figure>
+                </div>
+                <div class="img-org">
+                    <figure>
+                        <img src="img/flappy/CA_F3.png" width="500" alt="Código laberinto 3">
+                    </figure>
+
+                    <figure>
+                        <img src="img/flappy/CA_F4.png" width="500" alt="Código laberinto 4">
+                    </figure>
+                </div>
+                <div class="img-org">
+                    <figure>
+                        <img src="img/flappy/CA_F5.png" width="500" alt="Código laberinto 5">
+                    </figure>
+
+                    <figure>
+                        <img src="img/flappy/CP_F1.png" width="500" alt="Código laberinto 6">
+                    </figure>
+                </div>
+                <div class="img-org">
+                    <figure>
+                        <img src="img/flappy/CP_F2.png" width="500" alt="Código laberinto 7">
+                    </figure>
+
+                    <figure>
+                        <img src="img/flappy/CP_F3.png" width="500" alt="Código laberinto 8">
+                    </figure>
+                </div>
+                <div class="img-org">
+                    <figure>
+                        <img src="img/flappy/CP_F4.png" width="500" alt="Código laberinto 7">
+                    </figure>
+
+                    <figure>
+                        <img src="img/flappy/CP_F5.png" width="500" alt="Código laberinto 8">
+                    </figure>
+                </div>
+                <div class="img-org">
+                    <figure>
+                        <img src="img/flappy/CP_F6.png" width="500" alt="Código laberinto 7">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="distancia"> <!-- Apartado 4 -->
+            <h3>Paso a paso</h3> <!-- Título del apartado -->
+            <div class="info-apartados">
+                <div>
+                    <figure> <!-- Imagen del proyecto real -->
+                        <img src="img/flappy/circuito_flappy.jpg" width="350" alt="Proyecto Flappy Bird imagen">
+                    </figure>
+                </div>
+
+                <div id="info"> <!-- Pasos seguidos y resumidos para la realización del proyecto -->
+                    <p>Finalmente, detallamos los pasos necesarios para la realización de nuestro Flappy Bird.</p>
+                    <ul>
+                        <li>Primero, una vez tenemos claras las funcionalidades que queremos, hacemos un modelo digital de los componentes y las conexiones para verificar el proceso. Esto se hará con programas como Tinkercad o Fritzing, y con ello nos aseguraremos que los componentes, las conexiones o hasta el código son las correctos sin dañar los reales.</li>
+                        <li>Montamos el circuito en la realidad. Una vez hemos verificado que las conexiones sean las correctas, montamos nuestro circuito físico.</li>
+                        <li>Implementamos el código Arduino. Ahora, implementaremos el código Arduino, pues es el que se encarga de las funcionalidades directas de la placa.</li>
+                        <li>Al mismo tiempo, iremos realizando el código Processing. Durante el proceso, iremos comprobando el código haciendo pruebas y solucionando las acciones una a una.</li>
+                        <li>Probamos el juego y todas las funcionalidades implementadas. Cuando ya hayamos acabado, probamos el juego e interaccionamos de todas las formas posibles que hayamos implementado.</li>
+                        <li>Finalmente, pulimos algunos aspectos del código o algunos errores. En nuestro caso, destacar errores con las puntuaciones (que respondían a un error en el cálculo de las posiciones) y con el sensor hc-sr04 (una mala conexión con demasiado voltaje fundió nuestro sensor y hubo que cambiarlo).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="distancia"> <!-- Apartado 5 -->
+            <h3>El juego</h3> <!-- Título del apartado -->
+            <video width="600" height="400" id="video-juegos" controls><source src="img/flappy/FlappyArduino_ArduGame.mp4"></video> <!-- Vídeo del funcionamiento -->
+        </section>
+    </main>
+
+    <!-- Creamos el footer de la página -->
+    <footer class="bckg-footer distancia">
+        <div id="footer-logo">
+
+            <figure>
+                <img src="img/icono-logo.png" width="150" alt="logo imagen"> <!-- Logo -->
+            </figure>
+
+            <div id="secciones-footer"> <!-- Secciones del footer -->
+
+                <ul> <!-- Lista con los enlaces de interés -->
+                    <li><a href="Informacion.html" class="color-text">Información</a></li>
+                    <li><a href="Proyectos-Arduino.html" class="color-text">Proyectos Arduino</a></li>
+                    <li><a href="Videojuegos.html" class="color-text">Videojuegos</a></li>
+                    <li><a href="Principal.html" class="color-text">Inicio</a></li>
+                </ul>
+
+                <ul> <!-- Lista con info -->
+                    <li>Autor: Noé Andreu</li>
+                    <li>Grado TIDM</li>
+                    <li>Proyecto 3: Aplicación interactiva</li>
+                    <li>Universitat Oberta de Catalunya (UOC)</li>
+                </ul>
+
+                <!-- Parte de las redes sociales -->
+                <section id="redes">
+                    <div>
+                        <figure>
+                            <img src="img/instagram.png" width="30" alt="instagram imagen">
+                        </figure>
+                        <a href="#">#ardu_game</a>
+                    </div>
+
+                    <div>
+                        <figure>
+                            <img src="img/twitter.png" width="40" alt="twitter imagen">
+                        </figure>                   
+                        <a href="#">@ardu_game</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
