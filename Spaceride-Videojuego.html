@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/712575d4a5.js" crossorigin="anonymous"></script> <!-- Icono buscador -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> <!-- Traductor -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceRide ArduGame</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Archivo css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+15:wght@400;700&display=swap"> <!-- Tipografía jersey -->
+    <link rel="icon" href="img/icono-logo.png"> <!-- Logo de la pestaña -->
+    <script src="script.js"></script> <!-- Archivo js -->
+    <script src="libraries/p5.min.js"></script> <!-- Librería para usar P5 -->
+    <script src="libraries/p5.sound.min.js"></script> <!-- Librería para usar P5 Sound -->
+</head>
+<body>
+    <div id="google_translate_element"></div> <!-- Declaramos el traductor -->
+
+    <!-- Cabecera con el margen superior -->
+    <header>
+        <div class="navBar">
+            <div class="container">
+                <div class="logo"> <!-- Logo -->
+                    <a href="Principal.html"><img src="img/icono-logo.png" alt="Logo Web" id="logo-web"></a>
+                </div>
+
+                <nav> <!-- Menú -->
+                    <ul id="lista-menu">
+                      <li><a href="Principal.html" class="bordes-separacion">INICIO</a></li>
+                      <li><a href="Informacion.html" class="bordes-separacion">INFORMACIÓN</a></li>
+                      <li><a href="Proyectos-Arduino.html" class="bordes-separacion">PROYECTOS ARDUINO</a></li>
+                      <li><a href="Videojuegos.html" id="active" class="bordes-separacion">VIDEOJUEGOS</a></li>
+                    </ul>
+                </nav>
+
+                <div id="Buscador"> <!-- Buscador -->
+                    <input type="text" id="searchInput" placeholder="Buscar" required>
+                    <ul id="searchResults"></ul>
+                    <div id="logo-buscar">
+                        <i class="fas fa-search icon"></i>
+                    </div>
+                </div>
+
+                <ul id="lista-iconos"> <!-- Iconos de usuario e idioma -->
+                    <li><a href="Sesion.html"><img src="img/usuario.png" alt="usuario" class="icono"></a></li>
+                    <li><a href="#" id="idiomas-traduccion"><img src="img/idiomas.png" alt="idiomas" class="icono"></a>
+                        <select name="select" id="idiomas" style="display: none;"> <!-- Selector con las opciones de idioma -->
+                            <optgroup label="Idiomas">
+                                <option value="es">Español</option>
+                                <option value="en">Inglés</option>
+                                <option value="fr">Francés</option>
+                                <option value="de">Alemán</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cuerpo de la página -->
+    <main class="container"> <!-- Contenedor del cuerpo de la página -->
+        <div class="video-container"> <!-- Vídeo de la parte superior -->
+            <video width="100%" height="500" autoplay loop> <!-- Se reproduce automáticamente siempre -->
+                <source src="img/video-cabecera.mp4" type="video/mp4">
+            </video>
+        </div>
+        <figure id="logotipo"> <!-- Logotipo sobre el vídeo -->
+            <img src="img/logo.png" width="500" height="100" alt="logotipo">
+        </figure>
+    
+        <h1 class="titulo-contenido">SPACE RIDE</h1> <!-- Título de la página -->
+        <section id="intro-seccion"> <!-- Recuadro de introducción a la página -->
+            <p class="texto2">Os presentamos el primero de nuestros juegos, el SpaceRide, un juego que hará imposible que te aburras.</p>
+            <p class="texto3">¡Cuidado es adictivo!</p>
+        </section>
+
+        <!-- Creamos los diferentes apartados -->
+        <section class="distancia"> <!-- Apartado 1 -->
+            <h3>Descripción</h3> <!-- Título del apartado -->
+            <div class="info-apartados">
+                <div>
+                    <figure> <!-- Imagen del juego -->
+                        <img src="img/spaceride/spaceride-real.png" width="350" alt="Proyecto SpaceRide imagen">
+                    </figure>
+                </div>
+
+                <div id="info"> <!-- Descripción del juego -->
+                    <p>SpaceRide es un juego que viene a darle un nuevo horizonte al juego del dinosaurio que salta. En este juego, controlarás a un motorista en el espacio y tendrás que ir saltando obstáculos para ganar puntos.</p>
+                    <p>Para saltar tendremos que pulsar el espacio, y la dificultad de los saltos dependerá de los obstáculos, pues su altura será variable.</p>
+                    <p>La autoría del proyecto pertenece a Noé Andreu.</p>
+                    <p>El objetivo de este juego es mostrar un ejemplo de juegos algo más elaborados con una complejidad mayor, música, menú, efectos de sonido... que podemos hacer con Processing.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="distancia"> <!-- Apartado 2 -->
+            <h3>Programa</h3> <!-- Título del apartado -->
+            <div class="info-codigo">
+                <div id="info-juego">
+                    <p>En primer lugar se muestra el código comentado que se ha implementado en Processing para crear el juego.</p>
+                    <p>Este código está formado por el código general con sus funciones, diferentes clases que controlan los diferentes parámetros, un switch que forma una estructura en el juego, un menú con botones...</p>
+
+                </div>
+                <div class="img-org"> <!-- Código del juego en imágenes -->
+                    <figure>
+                        <img src="img/spaceride/C_SR1.png" width="500" alt="Código SpaceRide 1">
+                    </figure>
+
+                    <figure>
+                        <img src="img/spaceride/C_SR2.png" width="500" alt="Código SpaceRide 2">
+                    </figure>
+                </div>
+                <div class="img-org">
+                    <figure>
+                        <img src="img/spaceride/C_SR3.png" width="500" alt="Código SpaceRide 3">
+                    </figure>
+
+                    <figure>
+                        <img src="img/spaceride/C_SR4.png" width="500" alt="Código SpaceRide 4">
+                    </figure>
+                </div>
+                <div class="img-org">
+                    <figure>
+                        <img src="img/spaceride/C_SR5.png" width="500" alt="Código SpaceRide 5">
+                    </figure>
+
+                    <figure>
+                        <img src="img/spaceride/C_SR6.png" width="500" alt="Código SpaceRide 6">
+                    </figure>
+                </div>
+                <div class="img-org">
+                    <figure>
+                        <img src="img/spaceride/C_SR7.png" width="500" alt="Código SpaceRide 7">
+                    </figure>
+
+                    <figure>
+                        <img src="img/spaceride/C_SR8.png" width="500" alt="Código SpaceRide 8">
+                    </figure>
+                </div>
+                <div class="img-org">
+                    <figure>
+                        <img src="img/spaceride/C_SR9.png" width="500" alt="Código SpaceRide 9">
+                    </figure>
+ 
+                    <figure>
+                        <img src="img/spaceride/C_SR10.png" width="500" alt="Código SpaceRide 10">
+                    </figure>
+                </div>
+                <div class="img-org">
+                    <figure>
+                        <img src="img/spaceride/C_SR11.png" width="500" alt="Código SpaceRide 11">
+                    </figure>
+
+                    <figure>
+                        <img src="img/spaceride/C_SR12.png" width="500" alt="Código SpaceRide 12">
+                    </figure>
+                </div>
+
+                <div class="img-org">
+                    <figure>
+                        <img src="img/spaceride/C_SR13.png" width="500" alt="Código SpaceRide 13">
+                    </figure>
+
+                    <figure>
+                        <img src="img/spaceride/C_SR14.png" width="500" alt="Código SpaceRide 14">
+                    </figure>
+                </div>
+
+                <div class="img-org">
+                    <figure>
+                        <img src="img/spaceride/C_SR15.png" width="500" alt="Código SpaceRide 15">
+                    </figure>
+
+                    <figure>
+                        <img src="img/spaceride/C_SR16.png" width="500" alt="Código SpaceRide 16">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="distancia"> <!-- Apartado 3 -->
+            <h3>Vídeo del juego</h3> <!-- Título del apartado -->
+            <video width="600" height="400" id="video-juegos" controls><source src="img/spaceride/Ejemplo_Spaceride.mp4"></video> <!-- Vídeo del funcionamiento -->
+        </section>
+
+        <section class="distancia"> <!-- Apartado 4 -->
+            <h3>Prueba el juego</h3> <!-- Título del apartado -->
+            <!-- Colocamos el juego del laberinto programado en P5 -->
+            <div id="game-container"> 
+                <script src="spaceride.js"></script>
+            </div>
+        </section>
+    </main>
+
+    <!-- Creamos el footer de la página -->
+    <footer class="bckg-footer distancia">
+        <div id="footer-logo">
+
+            <figure>
+                <img src="img/icono-logo.png" width="150" alt="logo imagen"> <!-- Logo -->
+            </figure>
+
+            <div id="secciones-footer"> <!-- Secciones del footer -->
+
+                <ul> <!-- Lista con los enlaces de interés -->
+                    <li><a href="Informacion.html" class="color-text">Información</a></li>
+                    <li><a href="Proyectos-Arduino.html" class="color-text">Proyectos Arduino</a></li>
+                    <li><a href="Videojuegos.html" class="color-text">Videojuegos</a></li>
+                    <li><a href="Principal.html" class="color-text">Inicio</a></li>
+                </ul>
+
+                <ul> <!-- Lista con info -->
+                    <li>Autor: Noé Andreu</li>
+                    <li>Grado TIDM</li>
+                    <li>Proyecto 3: Aplicación interactiva</li>
+                    <li>Universitat Oberta de Catalunya (UOC)</li>
+                </ul>
+
+                <!-- Parte de las redes sociales -->
+                <section id="redes">
+                    <div>
+                        <figure>
+                            <img src="img/instagram.png" width="30" alt="instagram imagen">
+                        </figure>
+                        <a href="#">#ardu_game</a>
+                    </div>
+
+                    <div>
+                        <figure>
+                            <img src="img/twitter.png" width="40" alt="twitter imagen">
+                        </figure>                   
+                        <a href="#">@ardu_game</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
