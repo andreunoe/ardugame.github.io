@@ -646,3 +646,8 @@ footer a:hover{
     color: black;
     padding-left: 1em;
 }
+
+/*Colocación de los juegos*/
+#game-container {
+    margin-top: 5em; /* Ajusta la cantidad de espacio entre el contenido superior y el juego */
+}
